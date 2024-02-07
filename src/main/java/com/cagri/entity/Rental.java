@@ -1,7 +1,10 @@
 package com.cagri.entity;
 
+import com.cagri.utility.DataBase;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 
 public class Rental {
 
@@ -11,6 +14,7 @@ public class Rental {
     private Book book;
     private Customer customer;
     private Cashier cashier;
+    private ArrayList<Book> books;
 
     // P. CONSTRUCTOR //
     public Rental(LocalDate issueDate, LocalDate returnDate, double finePerDay, Book book, Customer customer, Cashier cashier) {
@@ -23,15 +27,39 @@ public class Rental {
     }
 
     // METHOD TO CALCULATE TOTAL FINE //
-
     public double calculateFine() {
         return ChronoUnit.DAYS.between(issueDate, returnDate) * finePerDay;
     }
-    public void loanBook(){
-
+    public void loanBook(int bookIndex){
+        Book book = books.get(bookIndex);
+        book.setIssued(true);
     }
 
+//    // FIND WHO BORROWED //
+//    public Customer findBorrower(Book book) {
+//        for (DataBase b : b) {
+//            if (b.getBook() == book) {
+//                Customer customer = b.getCustomer();
+//                Customer customerInfo = new Customer(
+//                        customer.getId(),
+//                        customer.getUsername(),
+//                        customer.getAddress(),
+//                        customer.getPhoneNo());
+//                return customerInfo;
+//            }
+//        }
+//        return null;
+//    }
+
     // GETTER & SETTER //
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(ArrayList<Book> books) {
+        this.books = books;
+    }
 
     public LocalDate getIssueDate() {
         return issueDate;

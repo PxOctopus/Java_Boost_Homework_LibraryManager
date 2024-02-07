@@ -7,6 +7,6 @@ import com.cagri.entity.Rental;
 import java.util.ArrayList;
 
 public abstract class DataBase {
-
+public static ArrayList<Book> booklist = new ArrayList<>();
 
 }
