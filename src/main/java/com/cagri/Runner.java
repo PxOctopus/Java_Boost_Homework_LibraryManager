@@ -2,7 +2,7 @@ package com.cagri;
 
 import com.cagri.entity.*;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 
 import static com.cagri.utility.DataBase.*;
 
@@ -16,9 +16,16 @@ public class Runner {
         customerList.add(customer1);
 //        System.out.println(customer1.getUsername());
         cashierList.add(cashier1);
-        Rental loan1 = new Rental(book1,customer1,cashier1);
+        Loan loan1 = new Loan(book1,customer1,cashier1);
+        LocalDate issueDate = LocalDate.parse("2024-01-24");
+        LocalDate returnDate   = LocalDate.parse("2024-01-30");
+        Loan loan2 = new Loan(issueDate,returnDate,book1,customer1,cashier1);
         loanList.add(loan1);
-        System.out.println( loan1.findCustomerByBookId());
+        System.out.println(loan1.findCustomerByBookId());
+        System.out.println(loan2.calculateFee());
+        Loan loan3 = new Loan();
+        loanList.add(loan3);
+
 
 
 
