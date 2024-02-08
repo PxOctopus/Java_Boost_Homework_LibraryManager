@@ -23,8 +23,7 @@ public class Runner {
         loanList.add(loan1);
         System.out.println(loan1.findCustomerByBookId());
         System.out.println(loan2.calculateFee());
-        Loan loan3 = new Loan();
-        loanList.add(loan3);
+
 
 
 
