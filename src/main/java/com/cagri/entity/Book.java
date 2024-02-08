@@ -4,13 +4,12 @@ import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
 
-public class Book extends Library{
+public class Book extends DataBase{
     private int bookId;
     private String name;
     private String author;
     private String genre;
     private boolean isIssued;
-    static int numberOfLoans;
 
 
     // P. CONSTRUCTORS //
@@ -33,33 +32,24 @@ public class Book extends Library{
         return bookId;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
-    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+
 
     public String getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
+
 
     public boolean isIssued() {
         return isIssued;
@@ -69,13 +59,6 @@ public class Book extends Library{
         isIssued = issued;
     }
 
-    public static int getNumberOfLoans() {
-        return numberOfLoans;
-    }
-
-    public static void setNumberOfLoans(int numberOfLoans) {
-        Book.numberOfLoans = numberOfLoans;
-    }
 
 
 //    public static void setRentalNumber(int rentalNumber) {

@@ -5,34 +5,58 @@ import com.cagri.utility.DataBase;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Rental {
+public class Rental extends DataBase {
 
     private LocalDate issueDate;
     private LocalDate returnDate;
-    private double finePerDay;
+    private final double finePerDay = 0.75;
     private Book book;
     private Customer customer;
     private Cashier cashier;
-    private ArrayList<Book> books;
+    static int numberOfLoans;
 
-    // P. CONSTRUCTOR //
-    public Rental(LocalDate issueDate, LocalDate returnDate, double finePerDay, Book book, Customer customer, Cashier cashier) {
+
+    // P. CONSTRUCTORS //
+    public Rental(LocalDate issueDate, LocalDate returnDate, Book book, Customer customer, Cashier cashier) {
         this.issueDate = issueDate;
         this.returnDate = returnDate;
-        this.finePerDay = finePerDay;
+        this.book = book;
+        this.customer = customer;
+        this.cashier = cashier;
+
+        numberOfLoans++;
+    }
+public int getNumberOfLoans(){
+        return numberOfLoans;
+}
+    public Rental(Book book, Customer customer, Cashier cashier) {
         this.book = book;
         this.customer = customer;
         this.cashier = cashier;
     }
 
     // METHOD TO CALCULATE TOTAL FINE //
+    public void loanBook(int bookIndex) {
+        Book book = booklist.get(bookIndex);
+        book.setIssued(true);
+    }
+
     public double calculateFine() {
         return ChronoUnit.DAYS.between(issueDate, returnDate) * finePerDay;
     }
-    public void loanBook(int bookIndex){
-        Book book = books.get(bookIndex);
-        book.setIssued(true);
+
+    public String findCustomerByBookId() {
+        System.out.println("Please, enter a book ID you want to find the borrower: ");
+        int bookID = new Scanner(System.in).nextInt();
+
+        for (int i = 0; i < booklist.size(); i++) {
+//            bookID = booklist.get(i).getBookId();
+            if (booklist.get(i).getBookId() == bookID)
+                return customer.getUsername();
+        }
+        return null;
     }
 
 //    // FIND WHO BORROWED //
@@ -53,72 +77,17 @@ public class Rental {
 
     // GETTER & SETTER //
 
-    public ArrayList<Book> getBooks() {
-        return books;
-    }
 
-    public void setBooks(ArrayList<Book> books) {
-        this.books = books;
-    }
-
-    public LocalDate getIssueDate() {
-        return issueDate;
-    }
-
-    public void setIssueDate(LocalDate issueDate) {
-        this.issueDate = issueDate;
-    }
-
-    public LocalDate getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
-    }
-
-    public double getFinePerDay() {
-        return finePerDay;
-    }
-
-    public void setFinePerDay(double finePerDay) {
-        this.finePerDay = finePerDay;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Cashier getCashier() {
-        return cashier;
-    }
-
-    public void setCashier(Cashier cashier) {
-        this.cashier = cashier;
-    }
-
-    // INFO //
     @Override
     public String toString() {
-        return "Rental{" +
-                "issueDate=" + issueDate +
-                ", returnDate=" + returnDate +
-                ", finePerDay=" + finePerDay +
-                ", book=" + book +
-                ", customer=" + customer +
-                ", cashier=" + cashier +
-                '}';
+        final StringBuffer sb = new StringBuffer("Rental{");
+        sb.append("issueDate=").append(issueDate);
+        sb.append(", returnDate=").append(returnDate);
+        sb.append(", finePerDay=").append(finePerDay);
+        sb.append(", book=").append(book);
+        sb.append(", customer=").append(customer);
+        sb.append(", cashier=").append(cashier);
+        sb.append('}');
+        return sb.toString();
     }
 }

@@ -1,23 +1,16 @@
 package com.cagri.entity;
 
-import java.util.UUID;
+import com.cagri.utility.DataBase;
 
-public abstract class Person {
+public abstract class Person extends DataBase {
     private int id;
     private String username;
     private String password;
     private String address;
     private String phoneNo;
-    static int count = 0;
 
     // P. CONSTRUCTOR //
     public Person(int id, String username, String password, String address, String phoneNo) {
-        count++;
-        if (id==-1){
-            id = count;
-        }else{
-            this.id = id;
-        }
 
         this.username = username;
         this.password = password;
@@ -31,9 +24,8 @@ public abstract class Person {
         this.address = address;
         this.phoneNo = phoneNo;
     }
+
 // GETTER & SETTER //
-
-
     public int getId() {
         return id;
     }
@@ -62,9 +54,7 @@ public abstract class Person {
         this.phoneNo = phoneNo;
     }
 
-    public static void setRentalNumber(int rentalNumber) {
-        Person.count = rentalNumber;
-    }
+
 
     // INFO //
     @Override
