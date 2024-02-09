@@ -1,7 +1,6 @@
 package com.cagri.repository;
 
 import com.cagri.entity.Customer;
-import com.cagri.entity.Loan;
 import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
