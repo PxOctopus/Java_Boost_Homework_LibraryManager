@@ -14,7 +14,7 @@ public class Rental extends DataBase {
     private Book book;
     private Customer customer;
     private Cashier cashier;
-    private ArrayList<Book> rentedBooks;
+    private static ArrayList<Book> rentedBooks = new ArrayList<>();
 
 
     // P. CONSTRUCTORS //
@@ -39,7 +39,7 @@ public class Rental extends DataBase {
     }
 
     // SEARCH & RENT A BOOK //
-    public void searchBook() {
+    public void searchNrentBook() {
         System.out.print("Please enter a book name that you want to search: ");
         String book = new Scanner(System.in).nextLine();
         for (int i = 0; i < booklist.size(); i++) {
@@ -49,6 +49,7 @@ public class Rental extends DataBase {
                 if (answer.equalsIgnoreCase("Y")){
                     booklist.get(i).setIssued(true);
                     rentedBooks.add(booklist.get(i));
+                    System.out.println(book + " was successfully rented!");
                 }else if(answer.equalsIgnoreCase("N")){
                     System.out.println("Exited");
                 }

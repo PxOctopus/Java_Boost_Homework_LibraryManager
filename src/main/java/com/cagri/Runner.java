@@ -24,7 +24,7 @@ public class Runner {
 //        rent1.findCustomerByBookId();
 //        rent2.calculateFee();
 //        loan2.searchCustomer();
-        rent2.searchBook();
+        rent2.searchNrentBook();
 
 
 
