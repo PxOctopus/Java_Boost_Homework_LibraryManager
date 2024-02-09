@@ -76,7 +76,7 @@ public class Rental extends DataBase implements IRental{
                 System.out.println(customer + " is matched our records!");
             } else {
                 System.out.println("Customer not found!" + "\nPlease check the rented books on the list!");
-                ;
+
             }
         }
     }
