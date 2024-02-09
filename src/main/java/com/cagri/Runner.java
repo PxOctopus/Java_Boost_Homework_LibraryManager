@@ -25,6 +25,8 @@ public class Runner {
 //        rent2.calculateFee();
 //        loan2.searchCustomer();
         rent2.searchNrentBook();
+        Rental rent3 = new Rental(book1, customer1, cashier1);
+        rent3.searchNrentBook();
 
 
 

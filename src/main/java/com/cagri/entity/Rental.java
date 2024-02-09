@@ -32,11 +32,11 @@ public class Rental extends DataBase {
         this.cashier = cashier;
     }
 
-    // METHOD TO RENT A BOOK //
-    public void rentBook(int bookIndex) {
-        Book book = booklist.get(bookIndex);
-        book.setIssued(true);
-    }
+//    // METHOD TO RENT A BOOK //
+//    public void rentBook(int bookIndex) {
+//        Book book = booklist.get(bookIndex);
+//        book.setIssued(true);
+//    }
 
     // SEARCH & RENT A BOOK //
     public void searchNrentBook() {
@@ -53,11 +53,17 @@ public class Rental extends DataBase {
                 }else if(answer.equalsIgnoreCase("N")){
                     System.out.println("Exited");
                 }
-            } else {
-                System.out.println("Book not found!");
+            } else if (rentedBooks.get(i).getName().equalsIgnoreCase(book)){
+                System.out.println("Book's already rented!");
+            }else{
+                System.out.println("Not found!");
             }
         }
     }
+
+    // PRINT RENTED BOOK LIST //
+
+
 
     // SEARCH A CUSTOMER //
     public void searchCustomer() {
@@ -73,8 +79,6 @@ public class Rental extends DataBase {
         }
     }
 
-    // PRINT RENTED BOOK LIST //
-
 
     // FIND CUSTOMER BY BOOKID //
     public void findCustomerByBookId() {
@@ -86,6 +90,7 @@ public class Rental extends DataBase {
         }
         System.out.println("No matching results were found!");
     }
+
 
     // CALCULATING FEE //
     public void calculateFee() {

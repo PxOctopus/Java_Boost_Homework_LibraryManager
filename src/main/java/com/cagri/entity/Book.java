@@ -10,7 +10,7 @@ public class Book extends DataBase{
     private final String name;
     private final String author;
     private final String genre;
-    private boolean isIssued;
+    public boolean isIssued;
 
 
 
