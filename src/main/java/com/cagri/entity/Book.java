@@ -5,10 +5,10 @@ import com.cagri.utility.DataBase;
 import java.util.ArrayList;
 
 public class Book extends DataBase{
-    private int bookId;
-    private String name;
-    private String author;
-    private String genre;
+    private final int bookId;
+    private final String name;
+    private final String author;
+    private final String genre;
     private boolean isIssued;
 
 
