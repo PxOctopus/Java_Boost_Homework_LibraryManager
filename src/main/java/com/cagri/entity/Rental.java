@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Rental extends DataBase {
+public class Rental extends DataBase implements IRental{
     private LocalDate issueDate;
     private LocalDate returnDate;
     private final double feePerDay = 0.75;
@@ -46,23 +46,25 @@ public class Rental extends DataBase {
             if (booklist.get(i).getName().equalsIgnoreCase(book) && booklist.get(i).isIssued()) {
                 System.out.println(book + " is available!" + " \nWould you like to rent the book? Y/N");
                 String answer = new Scanner(System.in).nextLine();
-                if (answer.equalsIgnoreCase("Y")){
+                if (answer.equalsIgnoreCase("Y")) {
                     booklist.get(i).setIssued(true);
                     rentedBooks.add(booklist.get(i));
                     System.out.println(book + " was successfully rented!");
-                }else if(answer.equalsIgnoreCase("N")){
+                } else if (answer.equalsIgnoreCase("N")) {
                     System.out.println("Exited");
                 }
-            } else if (rentedBooks.get(i).getName().equalsIgnoreCase(book)){
+            } else if (!booklist.get(i).isIssued) {
                 System.out.println("Book's already rented!");
-            }else{
+            } else {
                 System.out.println("Not found!");
             }
         }
     }
 
     // PRINT RENTED BOOK LIST //
-
+    public void getRentedBookList() {
+        System.out.println(rentedBooks);
+    }
 
 
     // SEARCH A CUSTOMER //
