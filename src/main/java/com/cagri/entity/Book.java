@@ -3,6 +3,7 @@ package com.cagri.entity;
 import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
+import java.util.function.BooleanSupplier;
 
 public class Book extends DataBase{
     private final int bookId;
@@ -10,6 +11,7 @@ public class Book extends DataBase{
     private final String author;
     private final String genre;
     private boolean isIssued;
+
 
 
     // P. CONSTRUCTORS //

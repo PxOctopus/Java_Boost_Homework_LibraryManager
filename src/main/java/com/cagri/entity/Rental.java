@@ -4,6 +4,7 @@ import com.cagri.utility.DataBase;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Rental extends DataBase {
@@ -13,6 +14,7 @@ public class Rental extends DataBase {
     private Book book;
     private Customer customer;
     private Cashier cashier;
+    private ArrayList<Book> rentedBooks;
 
 
     // P. CONSTRUCTORS //
@@ -46,7 +48,7 @@ public class Rental extends DataBase {
                 String answer = new Scanner(System.in).nextLine();
                 if (answer.equalsIgnoreCase("Y")){
                     booklist.get(i).setIssued(true);
-                    rentalList.add(booklist.get(i));
+                    rentedBooks.add(booklist.get(i));
                 }else if(answer.equalsIgnoreCase("N")){
                     System.out.println("Exited");
                 }
