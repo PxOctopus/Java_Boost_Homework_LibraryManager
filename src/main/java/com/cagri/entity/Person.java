@@ -2,7 +2,7 @@ package com.cagri.entity;
 
 import com.cagri.utility.DataBase;
 
-public abstract class Person extends DataBase {
+public abstract class Person {
     private int id;
     private String username;
     private String password;

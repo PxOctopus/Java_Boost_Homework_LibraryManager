@@ -5,13 +5,12 @@ import com.cagri.utility.DataBase;
 import java.util.ArrayList;
 import java.util.function.BooleanSupplier;
 
-public class Book extends DataBase{
+public class Book {
     private final int bookId;
     private final String name;
     private final String author;
     private final String genre;
     public boolean isIssued;
-
 
 
     // P. CONSTRUCTORS //
@@ -26,8 +25,6 @@ public class Book extends DataBase{
     }
 
 
-
-
     // GETTER & SETTER //
 
     public int getBookId() {
@@ -40,17 +37,14 @@ public class Book extends DataBase{
     }
 
 
-
     public String getAuthor() {
         return author;
     }
 
 
-
     public String getGenre() {
         return genre;
     }
-
 
 
     public boolean isIssued() {
@@ -61,21 +55,6 @@ public class Book extends DataBase{
         isIssued = issued;
     }
 
-
-
-//    public static void setRentalNumber(int rentalNumber) {
-//        Book.numberOfLoans = rentalNumber;
-//    }
-
-    // INFO //
-//    @Override
-//    public String toString() {
-//        return "Book{" +
-//                "bookId=" + bookId +
-//                ", name='" + name + '\'' +
-//                ", author='" + author + '\'' +
-//                ", genre='" + genre + '\'' +
-//                ", isIssued=" + isIssued +
-//                '}';
-//    }
 }
+
+

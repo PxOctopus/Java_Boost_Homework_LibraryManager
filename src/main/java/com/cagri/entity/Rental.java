@@ -14,8 +14,8 @@ public class Rental extends DataBase implements IRental{
     private Book book;
     private Customer customer;
     private Cashier cashier;
-    private static ArrayList<Book> rentedBooks = new ArrayList<>();
-
+    ArrayList<Book> bookList = new ArrayList<>();
+    ArrayList<Book> rentedBooks = new ArrayList<>();
 
     // P. CONSTRUCTORS //
     public Rental(LocalDate issueDate, LocalDate returnDate, Book book, Customer customer, Cashier cashier) {
@@ -32,28 +32,24 @@ public class Rental extends DataBase implements IRental{
         this.cashier = cashier;
     }
 
-//    // METHOD TO RENT A BOOK //
-//    public void rentBook(int bookIndex) {
-//        Book book = booklist.get(bookIndex);
-//        book.setIssued(true);
-//    }
+
 
     // SEARCH & RENT A BOOK //
     public void searchNrentBook() {
         System.out.print("Please enter a book name that you want to search: ");
         String book = new Scanner(System.in).nextLine();
-        for (int i = 0; i < booklist.size(); i++) {
-            if (booklist.get(i).getName().equalsIgnoreCase(book) && booklist.get(i).isIssued()) {
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).getName().equalsIgnoreCase(book) && bookList.get(i).isIssued()==false) {
                 System.out.println(book + " is available!" + " \nWould you like to rent the book? Y/N");
                 String answer = new Scanner(System.in).nextLine();
                 if (answer.equalsIgnoreCase("Y")) {
-                    booklist.get(i).setIssued(true);
-                    rentedBooks.add(booklist.get(i));
+                    bookList.get(i).setIssued(true);
+                    rentedBooks.add(bookList.get(i));
                     System.out.println(book + " was successfully rented!");
                 } else if (answer.equalsIgnoreCase("N")) {
                     System.out.println("Exited");
                 }
-            } else if (!booklist.get(i).isIssued) {
+            } else if (bookList.get(i).isIssued()) {
                 System.out.println("Book's already rented!");
             } else {
                 System.out.println("Not found!");
@@ -86,8 +82,8 @@ public class Rental extends DataBase implements IRental{
     public void findCustomerByBookId() {
         System.out.print("Please enter a book ID you want to find the renter: ");
         int bookID = new Scanner(System.in).nextInt();
-        for (int i = 0; i < booklist.size(); i++) {
-            if (booklist.get(i).getBookId() == bookID)
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).getBookId() == bookID)
                 System.out.println("Rented by: " + customer.getUsername());
         }
         System.out.println("No matching results were found!");
