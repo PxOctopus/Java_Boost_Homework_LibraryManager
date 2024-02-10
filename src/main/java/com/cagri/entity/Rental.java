@@ -33,14 +33,15 @@ public class Rental implements IRental{
         this.cashier = cashier;
     }
 
-
+    public Rental() {
+    }
 
     // SEARCH & RENT A BOOK //
     public void searchNrentBook() {
         System.out.print("Please enter a book name that you want to search: ");
         String book = new Scanner(System.in).nextLine();
         for (int i = 0; i < DataBase.bookList.size(); i++) {
-            if (DataBase.bookList.get(i).getName().equalsIgnoreCase(book) && DataBase.bookList.get(i).isIssued()==false) {
+            if (DataBase.bookList.get(i).getName().equalsIgnoreCase(book) && !DataBase.bookList.get(i).isIssued()) {
                 System.out.println(book + " is available!" + " \nWould you like to rent the book? Y/N");
                 String answer = new Scanner(System.in).nextLine();
                 if (answer.equalsIgnoreCase("Y")) {
@@ -59,7 +60,13 @@ public class Rental implements IRental{
 
     // PRINT RENTED BOOK LIST //
     public void getRentedBookList() {
-        System.out.println(bookList.);
+        for (int i=0; i<DataBase.bookList.size();i++){
+            if (DataBase.bookList.get(i).isIssued==true){
+                System.out.println("Rented books are: " + DataBase.bookList.get(i).getName());
+            }else{
+                System.err.println("No rented books found!");
+            }
+        }
     }
 
 

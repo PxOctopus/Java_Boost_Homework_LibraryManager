@@ -8,15 +8,15 @@ import java.util.ArrayList;
 
 public class BookRepository {
     public void save(Book book) {
-        DataBase.booklist.add(book);
+        DataBase.bookList.add(book);
     }
 
     public void delete(int index) {
-        DataBase.booklist.remove(index);
+        DataBase.bookList.remove(index);
 
     }
 
     public ArrayList<Book> findAll() {
-        return DataBase.booklist;
+        return DataBase.bookList;
     }
 }
