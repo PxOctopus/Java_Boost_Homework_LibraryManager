@@ -10,7 +10,7 @@ public class Book {
     private final String name;
     private final String author;
     private final String genre;
-    public boolean isIssued;
+    public static boolean isIssued;
 
 
     // P. CONSTRUCTORS //

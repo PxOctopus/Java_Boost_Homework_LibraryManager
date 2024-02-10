@@ -37,6 +37,8 @@ public class Runner {
         rent4.searchNrentBook();
         System.out.println(book1.isIssued);
 
+        Rental rent5 = new Rental();
+        rent5.searchNrentBook();
 
     }
 }
