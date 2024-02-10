@@ -6,7 +6,7 @@ import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
 
-public class CashierRepository {
+public class CashierRepository implements ICashierRepository{
     public void save(Cashier cashier){
         DataBase.cashierList.add(cashier);
     }

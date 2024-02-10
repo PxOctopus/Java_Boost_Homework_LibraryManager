@@ -6,7 +6,7 @@ import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
 
-public class BookRepository {
+public class BookRepository implements IBookRepository{
     public void save(Book book) {
         DataBase.bookList.add(book);
     }

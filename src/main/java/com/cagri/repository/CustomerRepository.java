@@ -5,7 +5,7 @@ import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
 
-public class CustomerRepository {
+public class CustomerRepository implements ICustomerRepository {
     public void save(Customer customer){
         DataBase.customerList.add(customer);
     }
