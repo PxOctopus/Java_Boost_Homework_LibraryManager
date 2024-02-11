@@ -27,13 +27,9 @@ public class Runner {
         LocalDate issueDate = LocalDate.parse("2024-01-24");
         LocalDate returnDate = LocalDate.parse("2024-01-30");
         Rental rent2 = new Rental(issueDate, returnDate, book1, customer1, cashier1);
-//        rentalList.add(rent1);
-////        rent1.findCustomerByBookId();
-////        rent2.calculateFee();
-////        loan2.searchCustomer();
-//        rent2.searchNrentBook();
+//
         RentalController rent5 = new RentalController();
-        rent5.searchNrentBook();
+
 
 
 
