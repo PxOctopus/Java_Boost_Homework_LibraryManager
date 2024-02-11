@@ -93,23 +93,10 @@ public class Rental{
 
 
 
-    // PRINT RENTED BOOK LIST //
-    public void getRentedBookList() {
-        for (int i=0; i<DataBase.bookList.size();i++){
-            if (DataBase.bookList.get(i).isIssued){
-                System.out.println("Rented books are: " + DataBase.bookList.get(i).getName());
-            }else{
-                System.err.println("No rented books found!");
-            }
-        }
-    }
-
 
     // CALCULATING FEE //
     public void calculateFee() {
         System.out.println("Calculating Fee...");
         System.out.println("Fee: " + (ChronoUnit.DAYS.between(issueDate, returnDate) * feePerDay));
     }
-
-
 }
