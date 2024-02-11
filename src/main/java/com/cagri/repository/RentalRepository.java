@@ -6,8 +6,8 @@ import com.cagri.utility.DataBase;
 import java.util.ArrayList;
 
 public class RentalRepository implements IRentalRepository{
-    public void save(Rental rent){
-        DataBase.rentalList.add(rent);
+    public void save(Rental rental){
+        DataBase.rentalList.add(rental);
     }
 
     public void delete(int index){

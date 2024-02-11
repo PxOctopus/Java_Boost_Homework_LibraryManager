@@ -1,7 +1,9 @@
 package com.cagri.service;
 
 import com.cagri.entity.Book;
+import com.cagri.entity.Cashier;
 import com.cagri.repository.BookRepository;
+import com.cagri.repository.CashierRepository;
 import com.cagri.repository.IBookRepository;
 import com.cagri.repository.ICashierRepository;
 
@@ -10,19 +12,19 @@ import java.util.ArrayList;
 public class CashierService implements ICashierService{
     private ICashierRepository cashierRepository;
 
-    public BookService(){
-        bookRepository = new BookRepository();
+    public CashierService(){
+        cashierRepository = new CashierRepository();
     }
-    public void save(Book book) {
-        bookRepository.save(book);
+    public void save(Cashier cashier) {
+        cashierRepository.save(cashier);
     }
 
     public void delete(int index) {
-        bookRepository.delete(index);
+        cashierRepository.delete(index);
 
     }
 
-    public ArrayList<Book> findAll() {
-        return bookRepository.findAll();
+    public ArrayList<Cashier> findAll() {
+        return cashierRepository.findAll();
     }
 }

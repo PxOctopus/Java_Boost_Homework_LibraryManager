@@ -6,7 +6,7 @@ import com.cagri.utility.DataBase;
 import java.util.ArrayList;
 
 public interface IRentalRepository {
-    public void save(Rental rent);
+    public void save(Rental rental);
 
     public void delete(int index);
 
