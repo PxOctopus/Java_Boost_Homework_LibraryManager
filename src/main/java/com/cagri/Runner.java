@@ -21,11 +21,11 @@ public class Runner {
         Collections.addAll(bookList, book1, book2, book3, book4, book5);
 
         Customer customer1 = new Customer(1, "Cagri Gumuskaptan", "Samsun", "5294212348");
-        Customer customer2 = new Customer(2, "Sevgin Gumuskaptan", "Samsun", "5294231122");
+        Customer customer2 = new Customer(2, "Turkan Sevgin Gumuskaptan", "Samsun", "5294231122");
         Customer customer3 = new Customer(3, "Zeynep Oyku Buyukbay", "Ankara", "5193216677");
-        Customer customer4 = new Customer(4, "Ahmet PEK", "Ankara", "5193316677");
-        Customer customer5 = new Customer(5, "Ahmet SERIN", "Istanbul", "5153216677");
-        Collections.addAll(customerList, customer1, customer2, customer3);
+        Customer customer4 = new Customer(4, "Ahmet Pek", "Ankara", "5193316677");
+        Customer customer5 = new Customer(5, "Ahmet Serin", "Istanbul", "5153216677");
+        Collections.addAll(customerList, customer1, customer2, customer3, customer4, customer5);
 
 
         Cashier cashier1 = new Cashier(1, "Hasan Inceler", "Istanbul", "05110001122");
@@ -36,28 +36,22 @@ public class Runner {
         Rental rent1 = new Rental(book1, customer1, cashier1);
         Rental rent2 = new Rental(book2, customer2, cashier2);
         Rental rent3 = new Rental(book5, customer3, cashier1);
-        Rental rent4 = new Rental(book1,customer2,cashier2);
-        Collections.addAll(rentalList, rent1, rent2, rent3,rent4);
-
-
+        Rental rent4 = new Rental(book1, customer2, cashier2);
+        Collections.addAll(rentalList, rent1, rent2, rent3, rent4);
 
 
         RentalController rentalController = new RentalController();
 //        rentalController.findBorrowersbyBookName();
+//        rentalController.getRentedBookList();
 //        rentalController.searchCustomer();
-////        rentalController.findCustomerByBookId();
-//
-//       rentalController.searchNrentBook();
-//       RentalController rentalController2 = new RentalController();
-//      rentalController2.searchNrentBook();
+//        rentalController.findCustomerByBookId();
 
-        rentalController.getRentedBookList();
+//        rentalController.searchNrentBook();
+//        RentalController rentalController2 = new RentalController();
+//        rentalController2.searchNrentBook();
 
-
-
-
-
-
+//        rentalController.findCustomersStartsWithAHM();
+        rentalController.findBorrowedBookListByCustomerId();
 
 
     }

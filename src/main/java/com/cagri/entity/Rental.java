@@ -29,6 +29,7 @@ public class Rental{
         this.book = book;
         this.customer = customer;
         this.cashier = cashier;
+        this.book.setIssued(true);
     }
 
     public Rental() {

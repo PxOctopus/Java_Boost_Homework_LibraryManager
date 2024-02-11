@@ -5,6 +5,7 @@ import com.cagri.service.CustomerService;
 import com.cagri.service.RentalService;
 import com.cagri.utility.DataBase;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RentalController {
@@ -25,7 +26,7 @@ public class RentalController {
         System.out.print("Please enter a book name that you want to search: ");
         String book = new Scanner(System.in).nextLine();
         for (int i = 0; i < bookService.findAll().size(); i++) {
-            if (bookService.findAll().get(i).getName().equalsIgnoreCase(book) && !bookService.findAll().get(i).isIssued()) {
+            if (bookService.findAll().get(i).getName().equalsIgnoreCase(book) && rentalService.findAll().get(i).getBook().isIssued()) {
                 System.out.println(book + " is available!" + " \nWould you like to rent the book? Y/N");
                 String answer = new Scanner(System.in).nextLine();
                 if (answer.equalsIgnoreCase("Y")) {
@@ -44,9 +45,9 @@ public class RentalController {
 
     // PRINT RENTED BOOK LIST //
     public void getRentedBookList() {
-        for (int i = 0; i < bookService.findAll().size(); i++) {
-            if (bookService.findAll().get(i).isIssued) {
-                System.out.println("Rented books are: " + bookService.findAll().get(i).getName());
+        for (int i = 0; i < rentalService.findAll().size(); i++) {
+            if (rentalService.findAll().get(i).getBook().isIssued()) {
+                System.out.println(rentalService.findAll().get(i).getBook().getName());
             }
         }
     }
@@ -56,25 +57,19 @@ public class RentalController {
         System.out.print("Please enter a customer name that you want to search: ");
         String customer = new Scanner(System.in).nextLine();
         for (int i = 0; i < customerService.findAll().size(); i++) {
-            if (customerService.findAll().get(i).getUsername().equalsIgnoreCase(customer)) {
+            if (customerService.findAll().get(i).getUsername().equalsIgnoreCase(customer))
                 System.out.println(customer + " is matched our records!");
-                break;
-            } else {
-                System.out.println("Customer not found!");
-                break;
-            }
         }
     }
 
     // FIND CUSTOMER BY BOOKID //
     public void findCustomerByBookId() {
-        System.out.print("Please enter the book ID you want to find the renter: ");
+        System.out.print("Please enter the book ID whose renter you want to find: ");
         int bookID = new Scanner(System.in).nextInt();
-        for (int i = 0; i < bookService.findAll().size(); i++) {
-            if (bookService.findAll().get(i).getBookId() == bookID)
-                System.out.println("Rented by: " + rentalService.findAll().get(i).getCustomer().getUsername());
+        for (int i = 0; i < rentalService.findAll().size(); i++) {
+            if (rentalService.findAll().get(i).getBook().getBookId() == bookID)
+                System.out.println(rentalService.findAll().get(i).getCustomer().getUsername());
         }
-        System.out.println("No matching results were found!");
     }
 
     // FIND PREVIOUS BORROWERS //
@@ -82,15 +77,30 @@ public class RentalController {
         System.out.print("Please enter the name of the book you want to find previous renters: ");
         String bookName = new Scanner(System.in).nextLine();
         for (int i = 0; i < rentalService.findAll().size(); i++) {
-            if (rentalService.findAll().get(i).getBook().getName().equalsIgnoreCase(bookName)) {
+            if (rentalService.findAll().get(i).getBook().getName().equalsIgnoreCase(bookName))
                 System.out.println(rentalService.findAll().get(i).getCustomer().getUsername());
-            }
         }
     }
 
     // FIND CUSTOMERS' NAMES STARTS WITH "AHM" //
 
-    // FIND CUSTOMERS' BORROWED BOOKLIST //
+    public void findCustomersStartsWithAHM() {
+        for (int i = 0; i < customerService.findAll().size(); i++) {
+            if (customerService.findAll().get(i).getUsername().toLowerCase().startsWith("ahm"))
+                System.out.println(customerService.findAll().get(i).getUsername());
+        }
+    }
+
+
+    // FIND BORROWED BOOKLIST by CUSTOMER'S ID//
+    public void findBorrowedBookListByCustomerId() {
+        System.out.print("Please enter the customer ID to find the list of books the customer rented: ");
+        int customerID = new Scanner(System.in).nextInt();
+        for (int i = 0; i < rentalService.findAll().size(); i++) {
+            if (rentalService.findAll().get(i).getCustomer().getId() == customerID)
+                System.out.println(rentalService.findAll().get(i).getBook().getName());
+        }
+    }
 
 
 }
