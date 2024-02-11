@@ -55,8 +55,6 @@ public abstract class Person {
     }
 
 
-
-    // INFO //
     @Override
     public String toString() {
         return "Person{" +

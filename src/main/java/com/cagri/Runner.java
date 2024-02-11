@@ -1,5 +1,6 @@
 package com.cagri;
 
+import com.cagri.controller.RentalController;
 import com.cagri.entity.*;
 import com.cagri.utility.DataBase;
 
@@ -31,14 +32,11 @@ public class Runner {
 ////        rent2.calculateFee();
 ////        loan2.searchCustomer();
 //        rent2.searchNrentBook();
-        Rental rent3 = new Rental(book1, customer1, cashier1);
-        Rental rent4 = new Rental();
-
-        rent4.searchNrentBook();
-        System.out.println(book1.isIssued);
-
-        Rental rent5 = new Rental();
+        RentalController rent5 = new RentalController();
         rent5.searchNrentBook();
+
+
+
 
     }
 }

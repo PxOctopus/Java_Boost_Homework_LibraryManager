@@ -55,6 +55,16 @@ public class Book {
         isIssued = issued;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Book{");
+        sb.append("bookId=").append(bookId);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", author='").append(author).append('\'');
+        sb.append(", genre='").append(genre).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
 
 
