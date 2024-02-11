@@ -7,7 +7,7 @@ import com.cagri.utility.DataBase;
 
 import java.util.ArrayList;
 
-public class BookService implements IBookService{
+public class BookService{
     private IBookRepository bookRepository;
 
     public BookService(){

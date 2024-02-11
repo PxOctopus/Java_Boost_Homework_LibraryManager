@@ -1,4 +1,11 @@
 package com.cagri.controller;
 
-public class BookController implements IBookController{
+import com.cagri.service.BookService;
+
+public class BookController {
+    private BookService bookService;
+
+    public BookController(){
+        bookService = new BookService();
+    }
 }

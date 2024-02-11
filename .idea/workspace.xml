@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60275016-3a83-48a9-9b5a-49271beeabf4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="60275016-3a83-48a9-9b5a-49271beeabf4" name="Changes" comment="4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CashierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CashierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/IBookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/ICashierController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/ICustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/IRentalController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/RentalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/RentalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/entity/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/entity/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/CashierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/CashierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/IBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/ICashierService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/IRentalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/RentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/RentalService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +71,19 @@
       <option name="presentableId" value="Default" />
       <updated>1707652747619</updated>
     </task>
+    <task id="LOCAL-00001" summary="4">
+      <option name="closed" value="true" />
+      <created>1707659992009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707659992009</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="4" />
+    <option name="LAST_COMMIT_MESSAGE" value="4" />
   </component>
 </project>

@@ -9,7 +9,7 @@ import com.cagri.repository.ICustomerRepository;
 
 import java.util.ArrayList;
 
-public class CustomerService implements ICustomerService{
+public class CustomerService {
     private ICustomerRepository customerRepository;
     public CustomerService(){
         customerRepository= new CustomerRepository();

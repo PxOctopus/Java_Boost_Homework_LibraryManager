@@ -9,7 +9,7 @@ import com.cagri.repository.ICashierRepository;
 
 import java.util.ArrayList;
 
-public class CashierService implements ICashierService{
+public class CashierService{
     private ICashierRepository cashierRepository;
 
     public CashierService(){

@@ -9,7 +9,7 @@ import com.cagri.repository.RentalRepository;
 
 import java.util.ArrayList;
 
-public class RentalService implements IRentalService{
+public class RentalService{
     private IRentalRepository rentalRepository;
     public RentalService(){
         rentalRepository= new RentalRepository();
