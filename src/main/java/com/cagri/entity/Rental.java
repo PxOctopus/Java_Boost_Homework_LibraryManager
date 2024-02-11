@@ -143,7 +143,7 @@ public class Rental{
 
     // FIND CUSTOMER BY BOOKID //
     public void findCustomerByBookId() {
-        System.out.print("Please enter a book ID you want to find the renter: ");
+        System.out.print("Please enter the book ID you want to find the renter: ");
         int bookID = new Scanner(System.in).nextInt();
         for (int i = 0; i < DataBase.bookList.size(); i++) {
             if (DataBase.bookList.get(i).getBookId() == bookID)
@@ -160,6 +160,15 @@ public class Rental{
     }
 
     // FIND PREVIOUS BORROWERS //
+    public void findBorrowersbyBookName(){
+        System.out.print("Please enter the name of the book you want to find previous renters: ");
+        String bookName = new Scanner(System.in).nextLine();
+        for (int i= 0; i< DataBase.rentalList.size(); i++){
+            if (DataBase.rentalList.get(i).book.isIssued()){
+                System.out.println(DataBase.rentalList.get(i).customer.getUsername());
+            }
+        }
+    }
 
     // FIND CUSTOMERS' NAMES STARTS WITH "AHM" //
 
