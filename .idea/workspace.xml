@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60275016-3a83-48a9-9b5a-49271beeabf4" name="Changes" comment="4">
+    <list default="true" id="60275016-3a83-48a9-9b5a-49271beeabf4" name="Changes" comment="5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CashierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CashierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/IBookController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/ICashierController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/ICustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/IRentalController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/controller/RentalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/controller/RentalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/entity/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/entity/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/CashierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/CashierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/IBookService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/ICashierService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/ICustomerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/IRentalService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/service/RentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/service/RentalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cagri/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cagri/Runner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +63,20 @@
       <option name="project" value="LOCAL" />
       <updated>1707659992009</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="5">
+      <option name="closed" value="true" />
+      <created>1707662013213</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707662013213</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4" />
+    <MESSAGE value="5" />
+    <option name="LAST_COMMIT_MESSAGE" value="5" />
   </component>
 </project>
