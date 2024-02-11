@@ -11,7 +11,8 @@ public class RentalController {
     private RentalService rentalService;
     private BookService bookService;
     private CustomerService customerService;
-    public RentalController(){
+
+    public RentalController() {
         rentalService = new RentalService();
         bookService = new BookService();
         customerService = new CustomerService();
@@ -33,13 +34,9 @@ public class RentalController {
                     break;
                 } else if (answer.equalsIgnoreCase("N")) {
                     System.out.println("Exited!");
-                    break;
                 }
             } else if (bookService.findAll().get(i).isIssued()) {
                 System.out.println("Book's already rented!");
-                break;
-            } else {
-                System.err.println("Not found!");
                 break;
             }
         }
@@ -47,13 +44,9 @@ public class RentalController {
 
     // PRINT RENTED BOOK LIST //
     public void getRentedBookList() {
-        for (int i=0; i<bookService.findAll().size();i++){
-            if (bookService.findAll().get(i).isIssued){
+        for (int i = 0; i < bookService.findAll().size(); i++) {
+            if (bookService.findAll().get(i).isIssued) {
                 System.out.println("Rented books are: " + bookService.findAll().get(i).getName());
-                break;
-            }else{
-                System.err.println("No rented books found!");
-                break;
             }
         }
     }
@@ -85,11 +78,11 @@ public class RentalController {
     }
 
     // FIND PREVIOUS BORROWERS //
-    public void findBorrowersbyBookName(){
+    public void findBorrowersbyBookName() {
         System.out.print("Please enter the name of the book you want to find previous renters: ");
         String bookName = new Scanner(System.in).nextLine();
-        for (int i= 0; i< rentalService.findAll().size(); i++){
-            if (rentalService.findAll().get(i).getBook().getName().equalsIgnoreCase(bookName)){
+        for (int i = 0; i < rentalService.findAll().size(); i++) {
+            if (rentalService.findAll().get(i).getBook().getName().equalsIgnoreCase(bookName)) {
                 System.out.println(rentalService.findAll().get(i).getCustomer().getUsername());
             }
         }

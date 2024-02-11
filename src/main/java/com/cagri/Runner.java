@@ -45,11 +45,13 @@ public class Runner {
         RentalController rentalController = new RentalController();
 //        rentalController.findBorrowersbyBookName();
 //        rentalController.searchCustomer();
-//        rentalController.findCustomerByBookId();
-
+////        rentalController.findCustomerByBookId();
+//
 //       rentalController.searchNrentBook();
+//       RentalController rentalController2 = new RentalController();
+//      rentalController2.searchNrentBook();
 
-
+        rentalController.getRentedBookList();
 
 
 
