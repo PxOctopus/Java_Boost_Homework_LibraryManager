@@ -8,17 +8,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Rental implements IRental{
+public class Rental{
     private LocalDate issueDate;
     private LocalDate returnDate;
     private final double feePerDay = 0.75;
     private Book book;
     private Customer customer;
     private Cashier cashier;
-//    ArrayList<Book> bookList = new ArrayList<>();
 
 
-    // P. CONSTRUCTORS //
+
     public Rental(LocalDate issueDate, LocalDate returnDate, Book book, Customer customer, Cashier cashier) {
         this.issueDate = issueDate;
         this.returnDate = returnDate;
@@ -36,77 +35,60 @@ public class Rental implements IRental{
     public Rental() {
     }
 
-    // SEARCH & RENT A BOOK //
-    public void searchNrentBook() {
-        System.out.print("Please enter a book name that you want to search: ");
-        String book = new Scanner(System.in).nextLine();
-        for (int i = 0; i < DataBase.bookList.size(); i++) {
-            if (DataBase.bookList.get(i).getName().equalsIgnoreCase(book) && !DataBase.bookList.get(i).isIssued()) {
-                System.out.println(book + " is available!" + " \nWould you like to rent the book? Y/N");
-                String answer = new Scanner(System.in).nextLine();
-                if (answer.equalsIgnoreCase("Y")) {
-                    DataBase.bookList.get(i).setIssued(true);
-                    System.out.println(book + " was successfully rented!");
-                } else if (answer.equalsIgnoreCase("N")) {
-                    System.out.println("Exited");
-                }
-            } else if (DataBase.bookList.get(i).isIssued()) {
-                System.out.println("Book's already rented!");
-            } else {
-                System.out.println("Not found!");
-            }
-        }
+    public LocalDate getIssueDate() {
+        return issueDate;
     }
 
-    // PRINT RENTED BOOK LIST //
-    public void getRentedBookList() {
-        for (int i=0; i<DataBase.bookList.size();i++){
-            if (DataBase.bookList.get(i).isIssued==true){
-                System.out.println("Rented books are: " + DataBase.bookList.get(i).getName());
-            }else{
-                System.err.println("No rented books found!");
-            }
-        }
+    public void setIssueDate(LocalDate issueDate) {
+        this.issueDate = issueDate;
     }
 
-
-    // SEARCH A CUSTOMER //
-    public void searchCustomer() {
-        System.out.print("Please enter a customer name that you want to search: ");
-        String customer = new Scanner(System.in).nextLine();
-        for (int i = 0; i < DataBase.customerList.size(); i++) {
-            if (DataBase.customerList.get(i).getUsername().equalsIgnoreCase(customer)) {
-                System.out.println(customer + " is matched our records!");
-            } else {
-                System.out.println("Customer not found!" + "\nPlease check the rented books on the list!");
-            }
-        }
+    public LocalDate getReturnDate() {
+        return returnDate;
     }
 
-
-    // FIND CUSTOMER BY BOOKID //
-    public void findCustomerByBookId() {
-        System.out.print("Please enter a book ID you want to find the renter: ");
-        int bookID = new Scanner(System.in).nextInt();
-        for (int i = 0; i < DataBase.bookList.size(); i++) {
-            if (DataBase.bookList.get(i).getBookId() == bookID)
-                System.out.println("Rented by: " + customer.getUsername());
-        }
-        System.out.println("No matching results were found!");
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
     }
 
-
-    // CALCULATING FEE //
-    public void calculateFee() {
-        System.out.println("Calculating Fee...");
-        System.out.println("Fee: " + (ChronoUnit.DAYS.between(issueDate, returnDate) * feePerDay));
+    public double getFeePerDay() {
+        return feePerDay;
     }
 
-    // FIND PREVIOUS BORROWERS //
+    public Book getBook() {
+        return book;
+    }
 
-    // FIND CUSTOMERS' NAMES STARTS WITH "AHM" //
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
-    // FIND CUSTOMERS' BORROWED BOOKLIST //
+    public Customer getCustomer() {
+        return customer;
+    }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
+    public Cashier getCashier() {
+        return cashier;
+    }
+
+    public void setCashier(Cashier cashier) {
+        this.cashier = cashier;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Rental{");
+        sb.append("issueDate=").append(issueDate);
+        sb.append(", returnDate=").append(returnDate);
+        sb.append(", feePerDay=").append(feePerDay);
+        sb.append(", book=").append(book);
+        sb.append(", customer=").append(customer);
+        sb.append(", cashier=").append(cashier);
+        sb.append('}');
+        return sb.toString();
+    }
 }
